@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Buscar empoleados por palabra clave</h1>
+    <form method="GET">{% csrf_token %}
+        <input type="text" id="kword" name="kword" placeholder="Introduce Nombre">
+        <button type="submit">Buscar</button>
+    </form>
+    <h3>Lista de resultados</h3>
+    <ul>
+        {% for e in empleados %}
+            <li>{{ e }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
